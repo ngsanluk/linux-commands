@@ -187,3 +187,119 @@ xxxxxxxx-web/
 ```
 
 ---
+
+# `apt` Command – Advanced Package Tool
+
+Below are the most used `apt` sub-commands
+
+- `list` – list packages based on package names
+- `search` – search in package descriptions
+- `show` – show package details
+- `install` – install packages
+- `reinstall` – reinstall packages
+- `remove` – remove packages
+- `autoremove` – remove automatically all unused packages
+- `update` – update list of available packages
+- `upgrade` – upgrade the system by installing/upgrading packages
+- `full-upgrade` – upgrade the system by removing/installing/upgrading packages
+- `edit-sources` – edit the source information file
+- `satisfy` – satisfy dependency strings
+
+## `apt` Command Examples
+
+| Command                     | What it does            |
+| --------------------------- | ----------------------- |
+| `sudo apt install tree`     | Install tree package    |
+| `sudo apt remove tree`      | Remove tree package     |
+| `sudo apt search tree`      | Search for tree package |
+| `sudo apt list --installed` | List the packages       |
+
+## `systemctl` Command - System Service Control
+
+systemctl is a Linux command-line utility used to control and manage systemd and services. You can think of systemctl as a control interface for the systemd init service, allowing you to communicate with **systemd** and perform operations.
+
+In **systemd** language, a service or a unit is a resource or an object that systemd is aware of and knows how to address.
+
+## Check System Service Status
+
+```
+sudo systemctl status
+```
+
+**Note**: executing `systemctl status` displays the current state of services, queued jobs, failed units, session scopes, and the control group (CGroup) process hierarchy.
+
+## Other `systemctl` Commands
+
+### Start a Service
+
+The systemctl command manually starts a service with:
+
+`systemctl start {servicename}`
+
+---
+
+### Stop a Service
+
+To manually stop a service with systemctl, type:
+
+`systemctl stop {servicename}`
+
+---
+
+### Restart a Service
+
+Instead of manually starting or restarting a service, it's faster to simply use the restart subcommand:
+
+`systemctl restart {servicename}`
+
+---
+
+### Enable a Service
+
+Starting and stopping a service only applies to the current runtime. What if admins need to configure the service to start when the system boots? The term for that action is enable:
+
+`systemctl enable {servicename}`
+
+---
+
+### Disable a Service
+
+Likewise, if admins need to configure a service to not start when the system boots, they can type the following command to disable the service:
+
+`systemctl disable {servicename}`
+
+---
+
+## Exercising `apt` and `systemctl` Commands
+
+1. Update Ubuntu repository package lists:
+
+- `sudo apt update`
+
+2. Install **nginx** package:
+
+- `sudo apt install nginx`
+
+3. Start and verify the service running status:
+
+- `sudo systemctl start nginx`
+- `sudo systemctl status nginx`
+
+4. Change the website homepage:
+   Navigate to the web root directory and open the homepage file in nano:
+
+- `cd /var/www/html`
+- `ls`
+- `sudo nano index.nginx-debian.html`
+
+5. Modify the HTML file:
+
+- Add your full name inside the page heading tag: `<h1>Welcome to nginx! (SUNNY)</h1>`
+- Save and exit nano:
+- Press **CTRL + O** to save code changes.
+- Press **Enter** to confirm filename.
+- Press **CTRL + X** to exit code editor.
+
+6. Verify the change:
+
+- Reload your page in the web browser (navigate to http://your-server-ip).
