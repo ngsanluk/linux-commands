@@ -150,7 +150,23 @@ You are asked to create a website folder structure with multiple levels of direc
 
 ---
 
-# Expected Website Structure
+## Install and use `tree` command
+
+Use the `tree` command to display your completed directory structure.
+
+Install the `tree` utility with:
+
+```bash
+sudo apt install tree
+```
+
+Then display your project structure:
+
+```bash
+tree
+```
+
+## Expected Website Structure
 
 After completing the lab, your project should have the following structure:
 
@@ -171,19 +187,3 @@ xxxxxxxx-web/
 ```
 
 ---
-
-# Install and use `tree` command
-
-Use the `tree` command to display your completed directory structure.
-
-Install the `tree` utility with:
-
-```bash
-sudo apt install tree
-```
-
-Then display your project structure:
-
-```bash
-tree
-```
